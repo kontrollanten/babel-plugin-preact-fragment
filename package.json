@@ -1,0 +1,47 @@
+{
+  "name": "babel-plugin-preact-fragment",
+  "version": "1.0.0",
+  "description": "babel plugin to add React Fragment support in preact",
+  "main": "lib/index.js",
+  "directories": {
+    "tests": "tests"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src tests",
+    "test": "mocha --require @babel/register tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kontrollanten/babel-plugin-preact-fragment.git"
+  },
+  "keywords": [
+    "preact",
+    "fragment",
+    "react",
+    "preact-compat"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kontrollanten/babel-plugin-preact-fragment/issues"
+  },
+  "homepage": "https://github.com/kontrollanten/babel-plugin-preact-fragment#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-plugin-tester": "^5.5.2",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.2.0",
+    "@babel/register": "^7.0.0"
+  }
+}
