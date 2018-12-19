@@ -14,6 +14,8 @@ jobs:
       script: yarn snyk test
     - stage: test
       script: yarn test
+    - stage: deploy
+      script: echo "Deploying to npm..."
       before_deploy:
         - yarn build
       deploy:
