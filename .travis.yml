@@ -10,5 +10,7 @@ jobs:
   include:
     - stage: lint
       script: yarn lint
+    - stage: snyk
+      script: yarn snyk test
     - stage: test
       script: yarn test
