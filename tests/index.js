@@ -20,7 +20,7 @@ pluginTester({
       fixture: path.join(__dirname, './fixtures/react.createElement-input.js'),
       outputFixture: path.join(__dirname, './fixtures/react.createElement-output.js'),
     },
-    'it should work': {
+    'it should work with JSXText and JSXExpressionContainers': {
       fixture: path.join(__dirname, './fixtures/react.createElement.jsxText-input.js'),
       outputFixture: path.join(__dirname, './fixtures/react.createElement.jsxText-output.js'),
     },
