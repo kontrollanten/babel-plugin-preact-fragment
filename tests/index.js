@@ -20,5 +20,9 @@ pluginTester({
       fixture: path.join(__dirname, './fixtures/react.createElement-input.js'),
       outputFixture: path.join(__dirname, './fixtures/react.createElement-output.js'),
     },
+    'it should work': {
+      fixture: path.join(__dirname, './fixtures/react.createElement.jsxText-input.js'),
+      outputFixture: path.join(__dirname, './fixtures/react.createElement.jsxText-output.js'),
+    },
   },
 });

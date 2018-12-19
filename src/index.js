@@ -1,4 +1,5 @@
 import pluginJsx from '@babel/plugin-syntax-jsx';
+import * as types from '@babel/types';
 
 export default function babelPluginPreactFragment() {
   return {
@@ -15,7 +16,10 @@ export default function babelPluginPreactFragment() {
         if (!p.node.openingElement) return;
 
         if (this.hasImportedFragment && p.node.openingElement.name && p.node.openingElement.name.name === 'Fragment') {
-          p.replaceWithMultiple(p.node.children);
+          const filteredChildren = p.node.children
+            .filter(c => !types.isJSXText(c))
+            .map(c => (types.isJSXExpressionContainer(c) ? c.expression : c));
+          p.replaceWithMultiple(filteredChildren);
           return;
         }
 
