@@ -1,0 +1,27 @@
+language: node_js
+node_js: 10
+
+cache: yarn
+
+install:
+  - yarn
+
+jobs:
+  include:
+    - stage: lint
+      script: yarn lint
+    - stage: snyk
+      script: yarn snyk test
+    - stage: test
+      script: yarn test
+      before_deploy:
+        - yarn build
+      deploy:
+        skip_cleanup: true
+        provider: npm
+        email: $NPM_PUBLISH_EMAIL
+        api_key: $NPM_PUBLISH_API_KEY
+        on:
+          tags: true
+      after_deploy:
+        - yarn snyk monitor

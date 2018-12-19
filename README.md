@@ -1,4 +1,4 @@
-# React.Fragment babel transpiler for preact applications
+# React.Fragment babel transpiler for preact applications [![Known Vulnerabilities](https://snyk.io/test/github/kontrollanten/babel-plugin-preact-fragment/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kontrollanten/babel-plugin-preact-fragment?targetFile=package.json)
 
 ## Usage
 
