@@ -14,11 +14,14 @@ export default function babelPluginPreactFragment() {
       },
       JSXElement(p) {
         if (!p.node.openingElement) return;
+        const { children } = p.node;
+        if (children.length > 1) return;
 
         if (this.hasImportedFragment && p.node.openingElement.name && p.node.openingElement.name.name === 'Fragment') {
-          const filteredChildren = p.node.children
+          const filteredChildren = children
             .filter(c => !types.isJSXText(c))
             .map(c => (types.isJSXExpressionContainer(c) ? c.expression : c));
+
           p.replaceWithMultiple(filteredChildren);
           return;
         }
@@ -26,7 +29,7 @@ export default function babelPluginPreactFragment() {
         if (!p.node.openingElement.name.object) return;
 
         if (p.node.openingElement.name.object.name === 'React' && p.node.openingElement.name.property.name === 'Fragment') {
-          p.replaceWithMultiple(p.node.children);
+          p.replaceWithMultiple(children);
         }
       },
       ImportDeclaration(p) {
