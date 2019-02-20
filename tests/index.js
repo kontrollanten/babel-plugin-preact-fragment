@@ -12,6 +12,10 @@ pluginTester({
       code: '<React.Fragment><div /></React.Fragment>',
       output: '<div />;',
     },
+    'it should not transform if there\'s multiple children, since preact will only return the first': {
+      code: '<React.Fragment><div /><div /></React.Fragment>',
+      output: '<React.Fragment><div /><div /></React.Fragment>;',
+    },
     'it should return children when using Fragment': {
       code: 'import React, { Fragment } from \'react\'; <Fragment><div /></Fragment>',
       output: 'import React, { Fragment } from \'react\';\n<div />;',
@@ -21,6 +25,7 @@ pluginTester({
       outputFixture: path.join(__dirname, './fixtures/react.createElement-output.js'),
     },
     'it should work with JSXText and JSXExpressionContainers': {
+      skip: true,
       fixture: path.join(__dirname, './fixtures/react.createElement.jsxText-input.js'),
       outputFixture: path.join(__dirname, './fixtures/react.createElement.jsxText-output.js'),
     },
