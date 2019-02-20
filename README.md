@@ -1,12 +1,18 @@
 # React.Fragment babel transpiler for preact applications [![Known Vulnerabilities](https://snyk.io/test/github/kontrollanten/babel-plugin-preact-fragment/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kontrollanten/babel-plugin-preact-fragment?targetFile=package.json)
 
+## Important
+This plugin will only remove the Fragment element if there's only one children. This can be
+helpfull if you're rendering a SVG element which gets broken with the `<undefined />` wrapper.
+
+If there's multiple children this plugin will skip transformation.
+
 ## Usage
 
 ### Download
 ```
-yarn add https://github.com/kontrollanten/babel-plugin-preact-fragment -D
+yarn add babel-plugin-preact-fragment -D
 # or
-npm i https://github.com/kontrollanten/babel-plugin-preact-fragment --save-dev
+npm i babel-plugin-preact-fragment --save-dev
 ```
 
 ### Config your build pipeline
