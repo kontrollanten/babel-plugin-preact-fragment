@@ -9,7 +9,9 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "lint": "eslint src tests",
-    "test": "mocha --require @babel/register tests"
+    "test": "mocha --require @babel/register tests",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -38,12 +40,13 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "mocha": "^5.2.0",
-    "sinon": "^7.1.1",
-    "snyk": "^1.118.0"
+    "sinon": "^7.1.1"
   },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/register": "^7.0.0",
-    "@babel/types": "^7.2.2"
-  }
+    "@babel/types": "^7.2.2",
+    "snyk": "^1.192.0"
+  },
+  "snyk": true
 }
