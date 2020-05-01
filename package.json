@@ -11,7 +11,7 @@
     "lint": "eslint src tests",
     "test": "mocha --require @babel/register tests",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/register": "^7.0.0",
     "@babel/types": "^7.2.2",
-    "snyk": "^1.192.0"
+    "snyk": "^1.316.1"
   },
   "snyk": true
 }
